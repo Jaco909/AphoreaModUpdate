@@ -5,7 +5,7 @@ import aphorea.utils.AphColors;
 import necesse.engine.registries.BuffRegistry;
 import necesse.engine.util.GameMath;
 import necesse.engine.util.GameRandom;
-import necesse.entity.levelEvent.SwordCleanSliceAttackEvent;
+import necesse.entity.levelEvent.SwordCleanSliceAttackMobEvent;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.ToolItemMobAbilityEvent;
 import necesse.entity.mobs.AttackAnimMob;
 import necesse.entity.mobs.Mob;
@@ -42,7 +42,7 @@ public class CryoKatana extends AphKatanaToolITem {
 
     @Override
     public void showKatanaAttack(Level level, final AttackAnimMob mob, final int seed, final InventoryItem item) {
-        level.entityManager.events.addHidden(new SwordCleanSliceAttackEvent(mob, seed, 12, this) {
+        level.entityManager.events.addHidden(new SwordCleanSliceAttackMobEvent(mob, seed, 12) {
             Trail[] trails = null;
 
             public void tick(float angle, float currentAttackProgress) {
